@@ -17,8 +17,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
            <a href="#home" className="flex items-center gap-2 mb-4">
-  <img 
-    src="public/SHIVA MOTO CORP logo.png"   // put your logo path here
+  <img
+    src="https://res.cloudinary.com/dp7eqwi5h/image/upload/v1775997302/SHIVA_MOTO_CORP_logo_k54u3n.png"
     alt="0001 Cars Logo"
     className="w-7 h-7 object-contain"
   />
