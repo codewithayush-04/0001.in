@@ -112,14 +112,14 @@ const About = () => {
           transition={{ duration: 0.7 }}
           className="mt-28 glass-card p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center gap-10"
         >
-          {/* Image */}
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-blue-500/30">
-            <img
-              src="public/shva.jpg"
-              alt="Founder"
-              className="w-full h-full object-cover"
-            />
-          </div>
+         {/* Image */}
+<div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-blue-500/30">
+  <img
+    src="https://res.cloudinary.com/dp7eqwi5h/image/upload/v1775995719/shva_wogtkf.jpg"
+    alt="Founder"
+    className="w-full h-full object-cover"
+  />
+</div>
 
           {/* Text */}
           <div className="text-center md:text-left max-w-2xl">
