@@ -11,13 +11,18 @@ const Hero = () => {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
-          src="public/newvideo.mp4"   // place in public folder
           autoPlay
           loop
           muted
           playsInline
           className="w-full h-full object-cover opacity-90"
-        />
+        >
+          {/* 👉 Replace this with your Cloudinary link */}
+          <source
+            src="https://res.cloudinary.com/dp7eqwi5h/video/upload/v1775996479/newvideo_lqmpq1.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
 
       {/* Dark Overlay */}
@@ -28,7 +33,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container relative z-20 mx-auto px-6 text-center flex flex-col items-center">
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -66,12 +71,18 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <a href="#book-now" className="btn-primary flex items-center justify-center gap-2 text-base">
+          <a
+            href="#book-now"
+            className="btn-primary flex items-center justify-center gap-2 text-base"
+          >
             Book Now
             <ChevronRight className="w-5 h-5" />
           </a>
 
-          <a href="#services" className="btn-secondary flex items-center justify-center gap-2 text-base">
+          <a
+            href="#services"
+            className="btn-secondary flex items-center justify-center gap-2 text-base"
+          >
             Explore Services
           </a>
         </motion.div>
