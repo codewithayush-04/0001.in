@@ -61,7 +61,7 @@ const Footer = () => {
               {[
                 { name: 'Instagram', href: 'https://www.instagram.com/0001__cars/' },
                 { name: 'WhatsApp', href: 'https://wa.me/7769970001' },
-                { name: 'Facebook', href: 'https://facebook.com' },
+                { name: 'Facebook', href: 'https://www.facebook.com/p/0001-Cars-100093969296760/' },
               ].map((social) => (
                 <a
                   key={social.name}

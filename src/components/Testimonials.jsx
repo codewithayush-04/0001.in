@@ -4,39 +4,38 @@ import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Rahul Sharma',
-    role: 'BMW 5 Series Owner',
-    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+    name: 'Yash Sahu',
+    role: 'Mahindra XUV700 Owner',
+    avatar: '',
     rating: 5,
-    text: 'Absolutely blown away by the ceramic coating job. My car looks better than when I first bought it. The attention to detail is unmatched!',
+    text: 'Got PPF + Ceramic coating done on my Scorpio N – totally worth it! The finish looks amazing and gives solid protection. The staff was super friendly and professional throughout the process. Loved how they explained everything and handled the car with proper care. Highly recommended!',
   },
   {
-    name: 'Priya Patel',
-    role: 'Mercedes C-Class Owner',
-    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+    name: 'Sunil Horo',
+    role: 'Tyre Consultant',
+    avatar: '',
     rating: 5,
-    text: 'The interior detailing was incredible. Every inch of the car was cleaned and conditioned. The leather feels brand new. Highly recommend!',
+    text: 'Best Yokohama tyre and washing services in Khunti. Thank you 0001 team!',
   },
   {
-    name: 'Arjun Mehta',
-    role: 'Audi Q7 Owner',
-   avatar: 'https://randomuser.me/api/portraits/men/67.jpg',
+    name: 'Kartik Ram',
+    role: 'Tyre Alignment',
+    avatar: '',
     rating: 5,
-    text: 'Best car detailing service I have ever used. The paint correction removed years of swirl marks. Professional team and amazing results.',
+    text: 'Alignment service is good & Yokohama tyres at genuine rate.',
   },
   {
-    name: 'Sneha Reddy',
-    role: 'Range Rover Owner',
-    avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
+    name: 'Ankura Sinku',
+    role: 'Mahindra Thar Owner',
+    avatar: '',
     rating: 5,
-    text: 'Outstanding service from start to finish. The team was professional, punctual, and the results speak for themselves. Will definitely return.',
+    text: 'I found the service at 0001 Cars to be quite reasonable. Overall experience was good. Definitely worth considering!',
   },
 ];
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -47,9 +46,17 @@ const Testimonials = () => {
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
+  const currentTestimonial = testimonials[current];
+
+  // 🔥 Generate initials
+  const initials = currentTestimonial.name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .slice(0, 2);
+
   return (
     <section className="py-28 relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -74,29 +81,36 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.4 }}
-              className="glass-card p-10 md:p-14 text-center relative"
+              className="glass-card p-8 md:p-14 text-center relative"
             >
               <Quote className="w-10 h-10 text-blue-500/30 absolute top-6 left-6" />
 
-              <img
-                src={testimonials[current].avatar}
-                alt={testimonials[current].name}
-                className="w-20 h-20 rounded-full mx-auto mb-6 border-2 border-blue-500/30 object-cover"
-              />
+              {/* Avatar (Image or Initials) */}
+              {currentTestimonial.avatar ? (
+                <img
+                  src={currentTestimonial.avatar}
+                  alt={currentTestimonial.name}
+                  className="w-20 h-20 rounded-full mx-auto mb-6 border-2 border-blue-500/30 object-cover"
+                />
+              ) : (
+                <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-xl font-semibold bg-gradient-to-br from-blue-500 to-indigo-600">
+                  {initials}
+                </div>
+              )}
 
               {/* Stars */}
               <div className="flex justify-center gap-1 mb-6">
-                {Array.from({ length: testimonials[current].rating }).map((_, i) => (
+                {Array.from({ length: currentTestimonial.rating }).map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
                 ))}
               </div>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 italic">
-                "{testimonials[current].text}"
+                "{currentTestimonial.text}"
               </p>
 
-              <h4 className="text-lg font-bold text-white">{testimonials[current].name}</h4>
-              <p className="text-sm text-gray-400">{testimonials[current].role}</p>
+              <h4 className="text-lg font-bold text-white">{currentTestimonial.name}</h4>
+              <p className="text-sm text-gray-400">{currentTestimonial.role}</p>
             </motion.div>
           </AnimatePresence>
 

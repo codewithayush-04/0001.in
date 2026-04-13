@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Award, Users, Clock, ThumbsUp } from 'lucide-react';
 
 const stats = [
-  { icon: <Users className="w-6 h-6" />, value: '2,500+', label: 'Happy Clients' },
-  { icon: <Award className="w-6 h-6" />, value: '8+', label: 'Years Experience' },
-  { icon: <Clock className="w-6 h-6" />, value: '5,000+', label: 'Cars Detailed' },
+  { icon: <Users className="w-6 h-6" />, value: '7,000+', label: 'Happy Clients' },
+  { icon: <Award className="w-6 h-6" />, value: '5+', label: 'Years Experience' },
+  { icon: <Clock className="w-6 h-6" />, value: '8,000+', label: 'Cars Detailed' },
   { icon: <ThumbsUp className="w-6 h-6" />, value: '99%', label: 'Satisfaction Rate' },
 ];
 
@@ -28,13 +28,13 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=700&h=500&fit=crop"
-                alt="Car detailing"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
+  <img
+    src="https://res.cloudinary.com/dp7eqwi5h/image/upload/v1776084533/cars_mmnjtp.jpg"
+    alt="Car detailing"
+    loading="lazy"
+    className="w-full h-full object-cover"
+  />
+</div>
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-blue-500/20 rounded-2xl -z-10" />
 
             <motion.div
@@ -44,7 +44,7 @@ const About = () => {
               transition={{ delay: 0.3 }}
               className="absolute -bottom-6 -left-6 glass-card p-5"
             >
-              <div className="text-3xl font-bold text-blue-400">8+</div>
+              <div className="text-3xl font-bold text-blue-400">5+</div>
               <div className="text-sm text-gray-400">Years of Excellence</div>
             </motion.div>
           </motion.div>
