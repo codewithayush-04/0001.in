@@ -33,15 +33,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-20 mx-auto px-6 text-center flex flex-col items-center">
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8"
-        >
-          <Sparkles className="w-4 h-4" />
-          Next-Generation Auto Care
-        </motion.div>
+     
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
